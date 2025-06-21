@@ -1,65 +1,69 @@
-# CSE 3100: Web Application Development with DevOps
+# CSE-3100 PHP Code Examples
 
-_Ahsanullah University of Science and Technology_  
-**Fall 2024**
-
----
-
-## Course Overview
-
-This course introduces modern web application development with a strong emphasis on DevOps principles and practices. Students will learn both front-end and back-end development, version control, containerization, and continuous integration/development.
-
-**By the end of this course, you will be able to:**
-
-- Design visually appealing, responsive, and user-friendly websites.
-- Develop dynamic, data-driven web applications using the **Laravel framework**.
-- Implement RESTful APIs and manage application logic effectively.
-- Collaborate using Git and GitHub, applying advanced branching and merging techniques.
-- Set up containerized environments using Docker.
-- Understand and implement CI/CD pipelines and their role in modern development.
-- Automate development workflows using DevOps best practices.
-- Deliver a full-stack web application deployed in a containerized environment.
+This repository contains PHP code examples and notes for learning and experimenting with PHP, including usage of the PHP built-in web server in standalone mode.
 
 ---
 
-## Repository Structure
+## Folder Structure
 
-This repository is organized into multiple branches. Each branch corresponds to a lecture or assignment.
-
-**To switch branches:**
-
-```bash
-git checkout <branch-name>
+```
+standalone-mode/
+  ├── index.php
+  ├── test.php
+  └── readme.md
+code-examples/
+  ├── 1-basics.php
+  ├── 2-variables.php
+  ├── 3-variables-scope.php
+  ├── 4-objects.php
+  ├── 5-common-functions.php
+  ├── 6-conditional-statements.php
+  ├── 7-loops.php
+  ├── 8-scopes.php
+  └── 9-arrays.php
 ```
 
-Replace `<branch-name>` with the appropriate lecture or assignment identifier (e.g., `lecture-1`, `assignment-2`, etc.).
+---
+
+## Getting Started
+
+### Requirements
+
+- PHP 5.4 or higher (latest recommended)
+- Terminal (Command Prompt, PowerShell, or similar)
 
 ---
 
-## Marks Distribution
+## Running the Examples
 
-| Component                | Weight (%) |
-| ------------------------ | ---------- |
-| Attendance               | 20%        |
-| Assignment               | 10%        |
-| Project Proposal         | 5%         |
-| Project Checkpoint 1     | 15%        |
-| Project Checkpoint 2     | 15%        |
-| Final Project Submission | 20%        |
-| Lab Exam                 | 15%        |
-| **Total**                | **100%**   |
+### 1. Using the PHP Built-in Server
 
----
+You can run the examples in the `standalone-mode` folder using PHP's built-in server:
 
-## Topics Covered
+1. Open a terminal and navigate to the `standalone-mode` directory:
 
-- HTML, CSS, Bootstrap, JavaScript, PHP, and Version Control
-- Laravel Basics: CSR vs SSR, Routing, View Engine
-- Middleware, Authentication & Authorization, Request Lifecycle
-- MySQL, ORM, Service Providers, DevOps & CI/CD Concepts
-- Docker & Containerization, Cloud Deployment
-- Application Monitoring & Security
+   ```bash
+   cd standalone-mode
+   ```
 
----
+2. Start the server:
 
-## Course Materials
+   ```bash
+   php -S localhost:8000
+   ```
+
+3. Open your browser and visit:
+
+   - [http://localhost:8000/](http://localhost:8000/) for `index.php`
+   - [http://localhost:8000/test.php](http://localhost:8000/test.php) for `test.php`
+
+### 2. Running Code Examples
+
+You can run any file in the `code-examples` folder by starting the PHP server in that folder or by running the files directly in the terminal.
+To run a specific example, you can use the following command:
+
+```bash
+php code-examples/1-basics.php
+```
+
+You can replace `1-basics.php` with any other file name to run different examples.
