@@ -6,6 +6,27 @@ You'll apply React and JavaScript skills, routing, API fetching, conditional ren
 
 ---
 
+## Submission Guidelines
+
+The following items are **strongly recommended** to ensure a professional, well-documented, and transparent submission (not directly assessed or graded):
+
+- **Time Tracking (Recommended):**  
+  Use tools like [WakaTime](https://wakatime.com/) to track your development time. This provides visibility into the effort invested.
+
+- **Updated README (Mandatory):**  
+  Include a clear and updated `README.md` in your repository with:
+
+  - Summary of implemented features
+  - Any additional improvements made
+  - Setup and run instructions
+  - Known issues or limitations
+  - Notes for the instructor
+
+- **AI Tool Usage (If Used):**  
+  If you have used any AI-powered tools during development, please include:
+  - A short description of which AI tool(s) were used
+  - A brief explanation of how they were used
+
 ## Requirements
 
 Make sure you have the following installed:
