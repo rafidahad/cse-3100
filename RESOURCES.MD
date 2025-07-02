@@ -1,5 +1,26 @@
 # Resources for Class 1
 
+## REST API
+
+### The 6 Constraints of REST API
+
+1. **Client-server decoupling**
+2. **Stateless**
+3. **Cacheability**
+4. **Uniform Interface**
+5. **Layered system architecture**
+6. **Code on Demand (optional)**
+
+### Key REST API Resources
+
+- [IBM: What are RESTful APIs?](https://developer.ibm.com/articles/ws-restful/)
+- [REST API Tutorial](https://www.restapitutorial.com/)
+- [REST Cookbook](http://restcookbook.com/)
+- [Richardson Maturity Model (Martin Fowler)](https://martinfowler.com/articles/richardsonMaturityModel.html)
+- [JSON Introduction](https://www.json.org/json-en.html)
+- [Postman: REST API Examples](https://blog.postman.com/rest-api-examples/)
+- [IBM: REST APIs Overview](https://www.ibm.com/think/topics/rest-apis)
+
 ## Creating a Pull Request
 
 ### Best Practices
