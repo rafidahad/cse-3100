@@ -44,11 +44,42 @@ export default function Home() {
           <div className="card-grid">
             {characters.map((char) => <CharacterCard key={char.id} character={char} />)}
           </div>
-          <div className="d-flex justify-content-center align-items-center gap-3 mt-3">
-            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={!info?.prev} className="btn btn-outline-primary">⬅ Prev</button>
-            <span>Page {page}</span>
-            <button onClick={() => setPage(p => p + 1)} disabled={!info?.next} className="btn btn-outline-primary">Next ➡</button>
-          </div>
+          <div className="pagination">
+  <button
+    onClick={() => setPage(1)}
+    disabled={page === 1}
+    className={`pagination-btn ${page === 1 ? "disabled" : ""}`}
+  >
+    ⏮ First
+  </button>
+
+  <button
+    onClick={() => setPage(p => Math.max(1, p - 1))}
+    disabled={!info?.prev}
+    className={`pagination-btn ${!info?.prev ? "disabled" : ""}`}
+  >
+    ⬅ Prev
+  </button>
+
+  <span className="pagination-page">Page {page}</span>
+
+  <button
+    onClick={() => setPage(p => p + 1)}
+    disabled={!info?.next}
+    className={`pagination-btn ${!info?.next ? "disabled" : ""}`}
+  >
+    Next ➡
+  </button>
+
+  <button
+    onClick={() => setPage(info?.pages || 1)}
+    disabled={page === info?.pages}
+    className={`pagination-btn ${page === info?.pages ? "disabled" : ""}`}
+  >
+    Last ⏭
+  </button>
+</div>
+
         </>
       )}
     </main>

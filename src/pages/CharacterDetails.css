@@ -1,0 +1,33 @@
+.character-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.character-img-container {
+  flex: 1 1 450px;
+  max-width: 500px;
+}
+
+.character-info {
+  flex: 2 1 400px;
+}
+
+.character-info ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+}
+
+.episode-list {
+  margin-top: 2rem;
+}
+
+.episode-list ul {
+  padding-left: 1.2rem;
+}
+
+.episode-list li {
+  margin-bottom: 0.5rem;
+}
