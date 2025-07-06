@@ -1,29 +1,56 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../components/CharacterCard";
-
 export default function Home() {
   const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("");
+  const [info, setInfo] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchCharacters = async () => {
+    setIsLoading(true);
+    let url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}`;
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      setCharacters(data.results || []);
+      setInfo(data.info || {});
+    } catch (err) {
+      setCharacters([]);
+      setInfo(null);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchCharacters = async () => {
-      const res = await fetch("https://rickandmortyapi.com/api/character");
-      const data = await res.json();
-      setCharacters(data.results);
-    };
-
     fetchCharacters();
-  }, []);
+  }, [page, search, status]);
 
   return (
-    <main className="container">
-      <h1 className="my-4">Rick & Morty Explorer</h1>
-      <div className="row">
-        {characters.map((char) => (
-          <div className="col-md-4 mb-4" key={char.id}>
-            <CharacterCard character={char} />
-          </div>
-        ))}
+    <main className="container my-4">
+      <div className="search-bar">
+        <input type="text" placeholder="Search by name..." value={search} onChange={(e) => { setSearch(e.target.value); setPage(1); }} />
+        <select value={status} onChange={(e) => { setStatus(e.target.value); setPage(1); }}>
+          <option value="">Filter by Status</option>
+          <option value="alive">Alive 🟢</option>
+          <option value="dead">Dead 🔴</option>
+          <option value="unknown">Unknown ⚪</option>
+        </select>
       </div>
+      {isLoading ? <p>Loading...</p> : (
+        <>
+          <div className="card-grid">
+            {characters.map((char) => <CharacterCard key={char.id} character={char} />)}
+          </div>
+          <div className="d-flex justify-content-center align-items-center gap-3 mt-3">
+            <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={!info?.prev} className="btn btn-outline-primary">⬅ Prev</button>
+            <span>Page {page}</span>
+            <button onClick={() => setPage(p => p + 1)} disabled={!info?.next} className="btn btn-outline-primary">Next ➡</button>
+          </div>
+        </>
+      )}
     </main>
   );
 }
